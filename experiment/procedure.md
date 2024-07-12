@@ -1,28 +1,21 @@
+### Procedure
 
-1)  **.**Click on **“Auxiliary Plane method”** the following window will
-    open. Click on **the NEXT** button to proceed.
+<div style="text-align:left">
+  Click on the Objective icon <img src="images/objecticon.png" alt="Alt text" style="height:80px; width:80px;">  to view the objective of the simulation. 
 
-![](./images/image7.png)
+   ![Alt text](images/objectscreen.png)
+   
+   Click on the Apparatus icon <img src="images/apparatus-icon.png" alt="Alt text" style="height:80px; width:80px;">  to check the tools required for this simulation.
 
-**2). By Pressing the Button highlighted you can proceed to the next
-step of construction.  
-Hereby pressing b We proceed to Step 2.**
+   ![Alt text](images/appratus_screen.png)
 
-![](./images/image5.png)
+  Click on the Solution icon <img src="images/solutions-icon.png" alt="Alt text" style="height:80px; width:80px;"> to proceed with further simulation steps.
 
-**3). Here similarly by pressing c’ we proceed to step 3. In the
-right-hand corner, a Reset button** ![](./images/image3.png) **gets
-active here.**
+  ![Alt text](images/solution_screen.png)
 
-![](./images/image6.png)
+   Evaluate and choose the correct answer to proceed with further steps, click on the next button <img src="images/nextButton-icon.png" alt="Alt text" style="height:80px; width:80px;">
 
-**4). Finally, after following all the steps, we reach the final
-projection.**
 
-![](./images/image4.png)
+   After performing the experiment, click on the Reset button <img src="images/resetButton-icon.png" alt="Alt text" style="height:80px; width:80px;"> to restart the experiment.
 
-5)  **. At any step in between, if the Reset button**
-    ![](./images/image3.png) **gets clicked, the whole board resets to
-    the first step.**
-
-![](./images/image5.png)
+</div>
