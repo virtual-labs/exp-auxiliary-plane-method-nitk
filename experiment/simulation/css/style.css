@@ -236,6 +236,9 @@ h1 {
   color: var(--clr-text-clr);
   margin-bottom: 0;
 }
+.anim{
+  animation: highlight 1s infinite;
+}
 
 .div__control {
   /* position: absolute;

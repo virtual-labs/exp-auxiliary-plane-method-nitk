@@ -295,8 +295,10 @@ function nextQuestion() {
       btnNext.classList.remove("blink");
     } else {
       currentStepCount += 1;
-      btnNext.removeAttribute("disabled");
-      btnNext.classList.add("blink");
+      // setInterval((
+      // btnNext.removeAttribute("disabled"),
+      // btnNext.classList.add("blink")
+      // ),1000);
     }
   }
 }
@@ -317,8 +319,14 @@ function nameAxis() {
 }
 
 function nameVPHP() {
+  btnNext.classList.add("disabled");
+  // btnNext.classList.add("blink");
   ctx.fillText("HP", 69, 243);
   ctx.fillText("VP", 69, 270);
+   setInterval((
+      btnNext.removeAttribute("disabled"),
+      btnNext.classList.add("blink")
+      ),1000);
   btnVPHP.classList.add("hide");
   nextQuestion();
 }
@@ -400,6 +408,8 @@ function checkAnswer(ele, index, answer, buttonClass, circle) {
   optionSelected.classList.remove("wrong");
   optionSelected.classList.remove("correct");
   if (index === answer) {
+    buttonClass.classList.add("anim");
+    buttonClass.classList.remove("hide");
     optionSelected.classList.add("correct");
     validateAnswer.innerHTML = "Right answer👍";
     answersDiv.appendChild(validateAnswer);
@@ -414,8 +424,10 @@ function checkAnswer(ele, index, answer, buttonClass, circle) {
   } else {
     clearCircle();
     optionSelected.classList.add("wrong");
+    buttonClass.classList.remove("anim");
+    buttonClass.classList.add("hide");
     if (buttonClass != null) buttonClass.classList.add("hide");
-    validateAnswer.innerHTML = "Worng answer, please check the options again👎";
+    validateAnswer.innerHTML = "Wrong answer, please check the options again👎";
     answersDiv.appendChild(validateAnswer);
   }
 }
@@ -488,7 +500,7 @@ function drawInitialLine() {
   ctx.beginPath();
   ctx.moveTo(575, 40);
   ctx.arc(575, 40, 7, 0, 2 * Math.PI);
-  ctx.fillStyle = "#ffdebd";
+  ctx.fillStyle = "#d9b28a";
   ctx.fill();
   ctx.closePath();
   ctx.closePath();
@@ -505,7 +517,7 @@ function a() {
   clearCircle();
   ctx.closePath();
   ctx.beginPath();
-  ctx.strokeStyle = "#ffdebd";
+  ctx.strokeStyle = "#d9b28a";
   ctx.fillStyle = "black";
   ctx.setLineDash([]);
   ctx.fillText("a'(b')", 255, 250);
@@ -514,11 +526,20 @@ function a() {
   animate(300, 350, 300, 250, 0);
   animate(343, 325, 343, 250);
   animate(386, 350, 386, 250);
+
   // document.getElementById("c").style.visibility = "visible";
   ctx.closePath();
   btnaDash.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
+  setTimeout(function() {
+    btnNext.removeAttribute("disabled");
+}, 2000);
+  // setInterval((
+  //   console.log("hi praj"),
+  //   btnNext.removeAttribute("disabled"),
+  //   btnNext.classList.add("blink")
+  //   ),3000);
 }
 
 function b() {
@@ -586,6 +607,9 @@ function b() {
   btna.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
+  setTimeout(function() {
+    btnNext.removeAttribute("disabled");
+}, 100);
 }
 
 function b11() {
@@ -632,7 +656,7 @@ function b11() {
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.strokeStyle = "#ffdebd";
+  ctx.strokeStyle = "#d9b28a";
   animate(
     313.3,
     221,
@@ -725,6 +749,9 @@ function b11() {
   btnbOneDash.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
+  setTimeout(function() {
+    btnNext.removeAttribute("disabled");
+}, 2000);
 }
 
 function b1() {
@@ -750,7 +777,7 @@ function b1() {
   ctx.fillText("θ", 270, 275);
   ctx.closePath();
   ctx.beginPath();
-  ctx.strokeStyle = "#ffdebd";
+  ctx.strokeStyle = "#d9b28a";
   animate(300, 250, 220, 170);
   animate(343.3, 250, 243.3, 150);
   animate(386.6, 250, 263.6, 130);
@@ -758,6 +785,9 @@ function b1() {
   btnThetaOne.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
+  setTimeout(function() {
+    btnNext.removeAttribute("disabled");
+}, 1000);
 }
 
 function bb() {
