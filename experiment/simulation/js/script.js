@@ -321,8 +321,8 @@ function nameAxis() {
 function nameVPHP() {
   btnNext.classList.add("disabled");
   // btnNext.classList.add("blink");
-  ctx.fillText("HP", 69, 243);
-  ctx.fillText("VP", 69, 270);
+  ctx.fillText("VP", 69, 243);
+  ctx.fillText("HP", 69, 270);
    setInterval((
       btnNext.removeAttribute("disabled"),
       btnNext.classList.add("blink")
