@@ -1,7 +1,8 @@
 let data = [
   {
     step: 1,
-    title: "Draw the axis and name VP & HP",
+    title:
+      "Draw the horizontal line xy as the reference and mark the VP and HP.",
     questions: [
       {
         question: "The type of projection discussed here is related to",
@@ -26,16 +27,12 @@ let data = [
   },
   {
     step: 2,
-    title: "Draw the top or front view of the given plane as given",
+    title: "Draw the top view of the hexagon on HP and the front view on VP.",
     questions: [
       {
-        question: " A circular surface plane is making 30 degrees with both H.P and V.P. The front view will be",
-        options: [
-          "Line",
-          "Circle",
-          "Oval",
-          "Ellipse",
-        ],
+        question:
+          " A circular surface plane is making 30 degrees with both H.P and V.P. The front view will be",
+        options: ["Line", "Circle", "Oval", "Ellipse"],
         answer: 3,
         buttonClass: "btnLine",
         circle: null,
@@ -61,11 +58,11 @@ let data = [
   },
   {
     step: 3,
-    title: "Draw the next corresponding view",
+    title:
+      "Draw the auxiliary inclined plane x<sub>1</sub>y<sub>1</sub> at an angle  to the horizontal plane.",
     questions: [
       {
-        question:
-          "What is the Full form of AIP?",
+        question: "What is the Full form of AIP?",
         options: [
           " Auxiliary Incident Plane",
           "Automatic Inclined Plane",
@@ -78,16 +75,15 @@ let data = [
         circleText: null,
         func: b1,
       },
-      
     ],
   },
   {
     step: 4,
-    title: "Draw the AIP or AVP as given",
+    title:
+      "Project the new top view of the geometry using the auxiliary plane. ",
     questions: [
       {
-        question:
-          "Why Auxiliary plane is used?",
+        question: "Why Auxiliary plane is used?",
         options: [
           "To obtain auxiliary views and true shapes of sections of solids.",
           "To correct the errors made in drawing",
@@ -100,20 +96,24 @@ let data = [
         circleText: null,
         func: b,
       },
-     
     ],
   },
   {
     step: 5,
-    title: "Draw the AVP/AIP",
+    title:
+      "Draw an auxiliary vertical plane x<sub>2</sub>y<sub>2</sub> inclined at an angle to the vertical plane.",
     questions: [
       {
-        question:
-          "What is the Full form of AVP?",
-        options: [" Auxiliary Incident Plane", "Automatic Vertical Plane", "Auxiliary Venomous Plane", "Auxiliary Vertical Plane"],
+        question: "What is the Full form of AVP?",
+        options: [
+          " Auxiliary Incident Plane",
+          "Automatic Vertical Plane",
+          "Auxiliary Venomous Plane",
+          "Auxiliary Vertical Plane",
+        ],
         answer: 3,
         buttonClass: "btnbOneDash",
-        circle:null,
+        circle: null,
         circleText: null,
         func: b11,
       },
@@ -121,17 +121,12 @@ let data = [
   },
   {
     step: 6,
-    title: "Draw the final AFV or AIV",
+    title: "Project the final front view.",
     questions: [
       {
         question:
           "A plane ABCD is held parallel to horizontal plane in which view we can watch drawing on that plane?",
-        options: [
-          "Top view",
-          "Front view",
-          "Back view",
-          "Side view",
-        ],
+        options: ["Top view", "Front view", "Back view", "Side view"],
         answer: 0,
         buttonClass: "btnB",
         circle: null,
@@ -275,7 +270,7 @@ function displayDiv(ele) {
 function nextStep() {
   currentStep = data.find((step) => currentStepCount === step.step);
   stepNumber.textContent = currentStepCount;
-  stepTitle.textContent = currentStep.title;
+  stepTitle.innerHTML = currentStep.title;
   btnNext.setAttribute("disabled", true);
   btnNext.classList.remove("blink");
   initialSetup();
@@ -323,10 +318,10 @@ function nameVPHP() {
   // btnNext.classList.add("blink");
   ctx.fillText("VP", 69, 243);
   ctx.fillText("HP", 69, 270);
-   setInterval((
-      btnNext.removeAttribute("disabled"),
-      btnNext.classList.add("blink")
-      ),1000);
+  setInterval(
+    (btnNext.removeAttribute("disabled"), btnNext.classList.add("blink")),
+    1000
+  );
   btnVPHP.classList.add("hide");
   nextQuestion();
 }
@@ -377,7 +372,7 @@ function animateRecursively(x1, y1, x2, y2, ratio) {
 function initialSetup() {
   currentStep = data.find((d) => d.step == currentStepCount);
   stepNumber.textContent = currentStepCount;
-  stepTitle.textContent = currentStep.title;
+  stepTitle.innerHTML = currentStep.title;
   currentQuestions = currentStep.questions;
   currentQuestionIndex = 0;
   quizDiv.classList.remove("hide");
@@ -532,9 +527,9 @@ function a() {
   btnaDash.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
-  setTimeout(function() {
+  setTimeout(function () {
     btnNext.removeAttribute("disabled");
-}, 2000);
+  }, 2000);
   // setInterval((
   //   console.log("hi praj"),
   //   btnNext.removeAttribute("disabled"),
@@ -603,13 +598,13 @@ function b() {
   ctx.lineTo(313.3, 221);
   ctx.stroke();
   ctx.closePath();
- 
+
   btna.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
-  setTimeout(function() {
+  setTimeout(function () {
     btnNext.removeAttribute("disabled");
-}, 100);
+  }, 100);
 }
 
 function b11() {
@@ -749,9 +744,9 @@ function b11() {
   btnbOneDash.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
-  setTimeout(function() {
+  setTimeout(function () {
     btnNext.removeAttribute("disabled");
-}, 2000);
+  }, 2000);
 }
 
 function b1() {
@@ -762,7 +757,7 @@ function b1() {
   ctx.stroke();
   clearCircle();
   ctx.arc(300, 250, 20, Math.PI * 0.75, Math.PI);
-  
+
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
@@ -785,9 +780,9 @@ function b1() {
   btnThetaOne.classList.add("hide");
   circle1 = new Path2D();
   nextQuestion();
-  setTimeout(function() {
+  setTimeout(function () {
     btnNext.removeAttribute("disabled");
-}, 1000);
+  }, 1000);
 }
 
 function bb() {
@@ -826,11 +821,11 @@ function bb() {
   ctx.stroke();
   ctx.fillStyle = "black";
   ctx.fillText("a₁'", 160, 210);
-  ctx.fillText("f₁'", 168 - 42+8, 245 - 15-50);
-  ctx.fillText("e₁'", 140 - 32+10, 190 - 8-50);
-  ctx.fillText("d₁'", 150 - 37+13, 160-60);
-  ctx.fillText("b₁'", 195 - 36+28, 235 - 8-50);
-  ctx.fillText("c₁'", 190 - 32+13, 180 - 8-60);
+  ctx.fillText("f₁'", 168 - 42 + 8, 245 - 15 - 50);
+  ctx.fillText("e₁'", 140 - 32 + 10, 190 - 8 - 50);
+  ctx.fillText("d₁'", 150 - 37 + 13, 160 - 60);
+  ctx.fillText("b₁'", 195 - 36 + 28, 235 - 8 - 50);
+  ctx.fillText("c₁'", 190 - 32 + 13, 180 - 8 - 60);
   ctx.closePath();
   btnB.classList.add("hide");
   circle1 = new Path2D();
@@ -900,36 +895,31 @@ function createCircle() {
   ctx.beginPath();
   if (cirText == "b1'") {
     circle1.arc(cirX, cirY, 20, 0, 2 * Math.PI);
-  } else if(cirText == "d'(e')"){
+  } else if (cirText == "d'(e')") {
     circle1.arc(cirX, cirY, 30, 0, 2 * Math.PI);
-  }  else if(cirText == "AIP"){
+  } else if (cirText == "AIP") {
     circle1.arc(cirX, cirY, 28, 0, 2 * Math.PI);
-  }
-  else if(cirText == "AVP"){
+  } else if (cirText == "AVP") {
     circle1.arc(cirX, cirY, 28, 0, 2 * Math.PI);
-  }
-  else circle1.arc(cirX, cirY, 16, 0, 2 * Math.PI);
+  } else circle1.arc(cirX, cirY, 16, 0, 2 * Math.PI);
   ctx.fillStyle = "#417472";
   ctx.fill(circle1);
   ctx.fillStyle = "#fff";
   if (cirText == "b1'") {
     ctx.fillText(cirText, cirX - 9, cirY + 5);
-  } else  if (cirText == "d'(e')") {
+  } else if (cirText == "d'(e')") {
     ctx.fillText(cirText, cirX - 12, cirY + 5);
-  } 
-  else  if (cirText == "AIP") {
+  } else if (cirText == "AIP") {
     ctx.fillText(cirText, cirX - 11, cirY + 5);
-  } 
-  else  if (cirText == "AVP") {
+  } else if (cirText == "AVP") {
     ctx.fillText(cirText, cirX - 12, cirY + 5);
-  } 
-  else ctx.fillText(cirText, cirX - 7, cirY + 5);
+  } else ctx.fillText(cirText, cirX - 7, cirY + 5);
   ctx.closePath();
 }
 // function createCircle() {
 //   console.log(cirText);
 //   ctx.beginPath();
-  
+
 //   let radius = 16; // Default radius
 //   if (cirText.length > 4) {
 //     radius = 20 + (cirText.length - 4) * 2; // Increase radius for longer text
@@ -938,14 +928,14 @@ function createCircle() {
 //   }
 
 //   circle1.arc(cirX, cirY, radius, 0, 2 * Math.PI);
-  
+
 //   ctx.fillStyle = "#417472";
 //   ctx.fill(circle1);
 //   ctx.fillStyle = "#fff";
 
 //   let textOffset = cirText.length > 2 ? cirText.length * 2 : cirText == "b1'" ? 9 : 7;
 //   ctx.fillText(cirText, cirX - textOffset-10, cirY + 5);
-  
+
 //   ctx.closePath();
 // }
 
@@ -954,27 +944,21 @@ function clearCircle() {
     ctx.clearRect(cirX - 20, cirY - 20, 40, 40);
   } else if (cirText == "d'(e')") {
     ctx.clearRect(cirX - 30, cirY - 30, 60, 60);
-  } 
-  else if (cirText == "AIP") {
+  } else if (cirText == "AIP") {
     ctx.clearRect(cirX - 28, cirY - 28, 60, 60);
-  }
-  else if (cirText == "AVP") {
+  } else if (cirText == "AVP") {
     ctx.clearRect(cirX - 28, cirY - 28, 60, 60);
-  }
-  else ctx.clearRect(cirX - 20, cirY - 20, 37, 37);
+  } else ctx.clearRect(cirX - 20, cirY - 20, 37, 37);
   ctx.fillStyle = "#000";
   if (cirText == "b1'") {
     ctx.fillText(cirText, cirX - 9, cirY + 5);
   } else if (cirText != "d'(e')") {
     ctx.fillText(cirText, cirX - 12, cirY + 5);
-  }
-  else if (cirText != "AIP") {
+  } else if (cirText != "AIP") {
     ctx.fillText(cirText, cirX - 11, cirY + 5);
-  }
-  else if (cirText != "AVP") {
+  } else if (cirText != "AVP") {
     ctx.fillText(cirText, cirX - 12, cirY + 5);
-  }
-  else{
+  } else {
     ctx.fillText(cirText, cirX - 7, cirY + 5);
   }
 }
